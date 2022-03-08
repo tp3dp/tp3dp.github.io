@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<style>
+h4 {
+  text-align: justify;
+}
+h5 {
+  text-align: center;
+}
+</style>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta name="description" content="Trajectory Planning for the Cleaning Task of 3D-Printed Objects">
+    	<meta name="author" content="STARS team">
+
+    	<title>Trajectory Planning for the Cleaning Task of 3D&#8211;Printed Objects</title>
+		
+    	<link href="css/bootstrap.min.css" rel="stylesheet">
+    	<link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+<div class="container">
+      <div class="header">
+        <h2><center>Trajectory Planning for the Cleaning Task of 3D-Printed Objects</center> </h2>
+		<h4><center>Submitted to IROS 2022</center></h4>
+		<h4> <center> <a href="https://thachdo.github.io/" class="text-info"> Van-Thach Do &sup1&#39&sup2</a> <a href="https://personal.ntu.edu.sg/cuong/index.html" class="text-info">&nbsp&nbsp&nbsp&nbsp Quang-Cuong Pham&sup1&#39&sup2</a> &nbsp&nbsp&nbsp&nbsp</center> </h4>
+      	<h4> <center> &sup1HP-NTU Digital Manufacturing Corporate Lab.<br> &sup2School of Mechanical and Aerospace Engineering, Nanyang Technological University.</center> </h4>
+	  </div>
+
+	
+      <div class="row">
+        <h2> A. Abstract</h2>
+<h4>In this paper, we propose an entire pipeline for the trajectory planning of robotic manipulators to address the cleaning task of 3D-Printed objects. Based on the mesh model of the printed part, we present a new approach to efficiently generate coverage lines that can achieve a lower time complexity and approximation ratio than the baseline through imposing cost constraints, defining reference points, and separating the computing process. The advantage of our approach is significantly demonstrated for meshes with massive numbers of triangles. The coverage path of the whole mesh is then computed by using the 2-Opt algorithm with imposing additional cost constraints. In addition, we propose an optimization-based common margin to support finding a set of collision-free and optimal robotic configurations from the coverage path. Then, the final collision-free robot trajectories subjected to robotic constraints are computed. Comparative simulations and practical experiments are carried out to demonstrate the effectiveness of our approach.</h4>
+	 </div>
+	
+		
+	<div class="row">
+    <h2> B. Visualization </h2>
+    <h4> The following videos describe the steps of obtaining a coverage path with collision-free rays for the top surface of object B (presented in the paper). The coverage path on the bottom surface is obtained in the same manner. A set of near-optimal and collision-free robot configurations is computed based on the determined coverage path and the corresponding collision-free rays. Lastly, the final robot trajectories are derived. We also show a physical cleaning demonstration in the next section.</h4>
+	</div>	
+<div class="row">
+	<h4> First, coverage lines are computed from unordered, intersected segments between the slicing planes (P<sub>y</sub>) and the mesh model.</h4>
+	<center>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/d086FhTvs2Q">
+    </iframe>
+	</center>
+	<h4> Then, the near-optimal coverage path over the mesh model is determined.</h4>
+	<center>
+	    <iframe width="920" height="560"
+	    src="https://www.youtube.com/embed/ieoQlKgun9A">
+	    </iframe>
+	</center>
+	<h4> The order of collision-free rays originated at the resampled points on the coverage path is then obtained.</h4>
+	<center>
+	    <iframe width="920" height="560"
+	    src="https://www.youtube.com/embed/F67kFyaPpRI">
+	    </iframe>
+	</center>
+</div>	
+
+	<div class="row">
+    <h2> C. Physical cleaning demonstration</h2>
+<h4> We conducted a practical cleaning demonstration for object B with the following setup: N<sub>x</sub> = N<sub>y</sub> = 13, &theta;<sub>m</sub> = 30 (deg), the blasting pressure is set at 60 psi, cleaning time ~300 sec (at 95% planned speed). A NEMA17 stepper motor is used to hold and flip the 3D-printed part.</h4>
+	<center>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/6kzyaT9FoPw">
+    </iframe>
+	</center>
+	</div>	
+	<div class="row">
+    <h2> D. Other benchmarks </h2>
+<h4> 1. Coverage rays at different &theta;<sub>m</sub> values:</h4>
+<center>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/KRDszSdnWSs">
+    </iframe>
+    <figcaption><h5> Object A, N<sub>x</sub> = N<sub>y</sub> = 13. </h5></figcaption>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/iqaz6T_AGFQ">
+    </iframe>
+    <figcaption><h5> Object A, N<sub>x</sub> = N<sub>y</sub> = 26. </h5></figcaption>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/sypMyNJa8a4">
+    </iframe>
+    <figcaption><h5> Object B, N<sub>x</sub> = N<sub>y</sub> = 13. </h5></figcaption>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/yISHHPrRIL8">
+    </iframe>
+    <figcaption><h5> Object B, N<sub>x</sub> = N<sub>y</sub> = 26. </h5></figcaption>
+	</center>
+<h4> 2. Coverage lines and the corresponding rays at different &theta; values on a high curvature bowl</h4>
+	<center>
+    <iframe width="920" height="560"
+    src="https://www.youtube.com/embed/jUSS-0yTS4U">
+    </iframe>
+    <figcaption><h5>&theta; = 90, 100, 110, and 120 (deg). N<sub>x</sub> = N<sub>y</sub> = 15, &theta;<sub>m</sub> = 90 (deg) for all cases.</h5></figcaption>
+	</center>
+	</div>	
+    </body>
+</html>
